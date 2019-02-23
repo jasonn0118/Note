@@ -27,22 +27,16 @@ class Note extends Component{
     }
     save(e){
         e.preventDefault()
-        console.log(e.target.value);
         this.props.onChange(this._newText.value,this.props.index)
         this.setState({
             editing:false
         })
-    }
-    change123= e => {
-        // console.log('fjewoifjewofi');
-        console.log(e.target.value);
     }
     renderForm(){
         return(
             <div className="note">
                 <form onSubmit={this.save}>
                     <textarea ref={input=>this._newText=input}/>
-                    <input onChange={this.change123}/>
                     <button id="save">FLOPPY-O</button>
                 </form>
             </div>
